@@ -54,3 +54,10 @@ company.addEmployee(emp1);
 company.addEmployee(mgr1);
 company.listEmployees();
 
+// //Task 4
+// calculateTotalPayroll() 
+//     {return this.employees.reduce((total, employee) => {
+//         {return total + employee.calculateAnnualSalary()}; // total payroll
+//      }, 0); // Calculate Payroll
+//     }; 
+//     console.log(company.calculateTotalPayroll()); 
