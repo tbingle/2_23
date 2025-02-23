@@ -49,10 +49,10 @@ class Company {
     listEmployees() {
         this.employees.forEach(employee => console.log(employee.getDetails())); // All Employees
     }}
-    const company = new Company("TechCorp");
-company.addEmployee(emp1);
-company.addEmployee(mgr1);
-company.listEmployees();
+    const company2 = new Company("TechCorp");
+company2.addEmployee(emp1);
+company2.addEmployee(mgr1);
+company2.listEmployees();
 
 // //Task 4
 // calculateTotalPayroll() 
@@ -61,3 +61,32 @@ company.listEmployees();
 //      }, 0); // Calculate Payroll
 //     }; 
 //     console.log(company.calculateTotalPayroll()); 
+
+//Task 5
+promoteToManager(employee, teamSize) 
+{
+    const index = this.employees.indexOf(employee);
+    if (index !== -1) {
+        // Promote to Manager by creating a new Manager instance
+        this.employees[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+    } else {
+        console.log("Employee not found for promotion.");
+    }
+}
+
+
+// Create company and add employees
+const company = new Company("TechCorp");
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+
+// List employees and total payroll
+company.listEmployees();
+console.log("Total Payroll:", company.calculateTotalPayroll());
+
+// Task 5: Promote Employee
+company.promoteToManager(emp1, 3); // Promote Alice Johnson to Manager with team size 3
+
+// List employees and total payroll after promotion
+company.listEmployees();
+console.log("Total Payroll after promotion:", company.calculateTotalPayroll());
