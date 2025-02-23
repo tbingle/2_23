@@ -36,3 +36,21 @@ class Manager extends Employee {
 console.log(mgr1.getDetails());
 console.log(mgr1.calculateBonus());
 
+//Task 3
+class Company {
+    constructor(name) {
+        this.name = name; //Name
+        this.employees = []; //Employees
+    }; 
+    //Constructor
+    addEmployee(employee) {
+        this.employees.push(employee); //Add Employees to Company
+    }
+    listEmployees() {
+        this.employees.forEach(employee => console.log(employee.getDetails())); // All Employees
+    }}
+    const company = new Company("TechCorp");
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+company.listEmployees();
+
